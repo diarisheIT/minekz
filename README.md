@@ -2,7 +2,7 @@
 
 **Beta release.** Expect bugs.
 
-A Fabric mod for Minecraft 1.21.11 that teaches Kazakh. The first time you pick up an item you have to say its Kazakh name aloud (offline speech recognition, no cloud), or you lose it. Includes an Archive of learned words, quests, recall challenges, animal challenges and LAN multiplayer with per-player progress.
+A Fabric mod for Minecraft 1.21.11 that teaches Kazakh. Go let your bratishkas play it.
 
 ## Download and install
 
