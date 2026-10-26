@@ -2,7 +2,7 @@
 
 **Beta release.** Expect bugs.
 
-A Fabric mod for Minecraft 1.21.11 that teaches Kazakh. Go let your bratishkas play it.
+A Fabric mod for Minecraft 1.21.11 that teaches Kazakh. Available in Kazakh, English(US), and Russian. Go let your bratishkas play it.
 
 ## Download and install
 
