@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "minekz",
+	"version": "${version}",
+	"name": "MineKZ",
+	"description": "Learn Kazakh: say an item's Kazakh name aloud the first time you get it, or lose it. Pronunciation samples: synthetic voice, Azure Speech kk-KZ-DauletNeural.",
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["kz.minekz.MineKz"],
+		"client": ["kz.minekz.client.MineKzClient"]
+	},
+	"mixins": [
+		"minekz.mixins.json",
+		{ "config": "minekz.client.mixins.json", "environment": "client" }
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

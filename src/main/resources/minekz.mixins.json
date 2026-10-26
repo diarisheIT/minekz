@@ -1,0 +1,18 @@
+{
+	"required": true,
+	"package": "kz.minekz.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"BlockMixin",
+		"BlockStateMixin",
+		"ContainerMenuMixin",
+		"InventoryMixin",
+		"ItemStackMixin",
+		"LivingEntityMixin",
+		"PlayerMixin",
+		"ServerPlayerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

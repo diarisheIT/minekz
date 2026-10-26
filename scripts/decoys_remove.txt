@@ -1,0 +1,3 @@
+# Near misses to take out of the grammar, one per line (# starts a comment).
+# Add a word here when the overlay's "last heard" keeps showing it while you say the right Word,
+# then run: python3 scripts/gen_word_list.py

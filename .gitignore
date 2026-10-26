@@ -1,0 +1,8 @@
+cache/
+.gradle/
+build/
+run/
+run2/
+run-server/
+*.class
+.idea/
