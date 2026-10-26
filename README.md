@@ -8,17 +8,25 @@ A Fabric mod for Minecraft 1.21.11 that teaches Kazakh. Available in Kazakh, Eng
 
 1. Install [Fabric Loader](https://fabricmc.net/use/installer/) for **Minecraft 1.21.11** (Java 21 or newer).
 2. Download [Fabric API](https://modrinth.com/mod/fabric-api) for 1.21.11 and put it in your `mods` folder.
-3. Download `minekz-1.0.0-beta.1.jar` from the [latest release](../../releases/latest) and put it in the same `mods` folder.
+3. Download `minekz-1.0.0-beta.2.jar` from the [latest release](../../releases/latest) and put it in the same `mods` folder.
 4. Start the game and allow the microphone when asked.
 
 The jar is about 94 MB because it bundles the offline Kazakh speech model. The first launch unpacks it to the game folder.
+
+## Microphone problems
+
+The mic only turns on while a Challenge is running (the "say this word" banner). If the game says it hears only silence, your system is blocking the microphone:
+
+- **macOS:** the official Minecraft Launcher cannot ask for microphone access, so macOS silently gives the game no sound. Quit the launcher, open Terminal, run `/Applications/Minecraft.app/Contents/MacOS/launcher`, start the game from there and click Allow when macOS asks Terminal for the microphone. If there is no prompt, turn on Terminal in System Settings, Privacy & Security, Microphone.
+- **Windows:** Settings, Privacy & security, Microphone: turn on "Let desktop apps access your microphone" and check the default input device.
+- **Linux:** check that your default input device is the right microphone and not muted.
 
 ## Build from source
 
 Needs JDK 21 and the Vosk Kazakh model:
 
 1. Download `vosk-model-small-kz-0.42` from <https://alphacephei.com/vosk/models> and unzip it to `prototypes/vosk-piper-PROTOTYPE/cache/vosk-model-small-kz-0.42`.
-2. Run `./gradlew build`. The jar is in `build/libs/minekz-1.0.0-beta.1.jar`.
+2. Run `./gradlew build`. The jar is in `build/libs/minekz-1.0.0-beta.2.jar`.
 
 Run in development with `./gradlew runClient`.
 

@@ -17,6 +17,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.Identifier;
 import org.lwjgl.glfw.GLFW;
@@ -46,6 +47,8 @@ public class MineKzClient implements ClientModInitializer {
 	/** Phrases heard by the speech thread, sent to the server on the client tick. */
 	static final Queue<String> heard = new ConcurrentLinkedQueue<>();
 	static volatile boolean speechFailed;
+	static volatile boolean micSilent;
+	private static boolean micSilentShown; // once per game run
 	private static boolean speechFailedSent; // per connection: each server needs telling
 
 	@Override
@@ -88,6 +91,10 @@ public class MineKzClient implements ClientModInitializer {
 			if (speechFailed && !speechFailedSent && ClientPlayNetworking.canSend(Packets.ClientEvent.TYPE)) {
 				send(new Packets.ClientEvent(Packets.ClientEvent.Kind.SPEECH_FAILED));
 				speechFailedSent = true;
+			}
+			if (micSilent && !micSilentShown && client.player != null) {
+				client.player.displayClientMessage(Component.translatable("minekz.chat.mic_silent"), false);
+				micSilentShown = true;
 			}
 			while (REPLAY.consumeClick()) {
 				send(new Packets.ClientEvent(Packets.ClientEvent.Kind.REPLAY));

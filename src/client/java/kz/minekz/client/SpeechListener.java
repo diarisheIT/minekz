@@ -23,6 +23,7 @@ final class SpeechListener implements Runnable {
 
 	/** Loudest sample in the last mic read, 0 to 1; the HUD's mic indicator follows it. */
 	static volatile float level;
+	private static final int SILENT_READS = 30; // 3 s
 
 	static void start() {
 		Thread thread = new Thread(new SpeechListener(), "minekz-speech");
@@ -60,9 +61,14 @@ final class SpeechListener implements Runnable {
 			mic.open(FORMAT);
 			mic.start();
 			byte[] buffer = new byte[3200]; // 0.1 s, so the loop notices the Challenge ending quickly
+			int silentReads = 0;
 			while (micOn()) {
 				int read = mic.read(buffer, 0, buffer.length);
 				level = peak(buffer, read);
+				silentReads = level == 0 ? silentReads + 1 : 0;
+				if (silentReads == SILENT_READS) { // a live mic always has some noise; exact zeros mean the OS is muting it (macOS, official launcher)
+					MineKzClient.micSilent = true;
+				}
 				recognizer.accept(buffer, read).ifPresent(MineKzClient.heard::add);
 			}
 		} finally {

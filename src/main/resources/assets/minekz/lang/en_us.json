@@ -39,5 +39,6 @@
 	"minekz.archive.ago.now": "just now",
 	"minekz.chat.learned": "Learned: %1$s (%3$s)",
 	"minekz.chat.lost": "Lost: %s × %s",
-	"minekz.chat.challenges_off": "Challenges are off: speech recognition is unavailable (no microphone, permission denied, or model failed to load)."
+	"minekz.chat.challenges_off": "Challenges are off: speech recognition is unavailable (no microphone, permission denied, or model failed to load).",
+	"minekz.chat.mic_silent": "MineKZ hears only silence from your microphone. Allow Minecraft to use the microphone in your system settings. On a Mac with the official launcher, start the launcher from Terminal (see the README on GitHub)."
 }
