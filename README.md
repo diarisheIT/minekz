@@ -4,6 +4,28 @@
 
 A Fabric mod for Minecraft 1.21.11 that teaches Kazakh. Available in Kazakh, English(US), and Russian. Go let your bratishkas play it.
 
+## Features
+
+### Name the item or animal in Kazakh to learn it!
+
+![Challenges](docs/media/learn-items-animals.gif)
+
+### Miss the word and the item is gone! Say it right!
+
+![Loss](docs/media/lost.gif)
+
+### Your Archive: every word you have learned, all in one place!
+
+![Archive](docs/media/archive.gif)
+
+### Finish quests by saying the word or sound!
+
+![Quests](docs/media/quests.gif)
+
+### Team up, race your friends, and climb the leaderboard!
+
+![Leaderboard](docs/media/leaderboard.png)
+
 ## Download and install
 
 1. Install [Fabric Loader](https://fabricmc.net/use/installer/) for **Minecraft 1.21.11** (Java 21 or newer).
